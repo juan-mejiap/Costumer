@@ -1,6 +1,4 @@
-// Presentation Layer
 using Microsoft.AspNetCore.Mvc;
-using System;
 using Application;
 using Domain;
 

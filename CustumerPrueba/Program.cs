@@ -20,12 +20,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 
-// Configuración de servicios de aplicación
+
 builder.Services.AddTransient<OrderService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

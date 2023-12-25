@@ -33,4 +33,8 @@ public class OrderRepository : IOrderRepository
         _dbContext.SaveChanges();
     }
 
+    public void CancelOrder(Order  order){
+        _dbContext.Orders.Remove(order);
+        _dbContext.SaveChanges();
+    }
 }

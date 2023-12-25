@@ -1,5 +1,3 @@
-// Infrastructure Layer
-// Importante: Añade el namespace necesario
 using Domain;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +10,6 @@ public class AppDbContext : DbContext
     {
     }
 
-    // Configuración para usar SQLite
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         options.UseSqlite("Data Source=app.db");
