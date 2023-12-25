@@ -29,8 +29,11 @@ public class CustomerRepository : ICustomerRepository
 
         _dbContext.Customers.Add(customer);
         _dbContext.SaveChanges();
+    }
 
-        
+    public void DeleteCustomer(Customer  customer){
+        _dbContext.Customers.Remove(customer);
+        _dbContext.SaveChanges();
     }
 
 }

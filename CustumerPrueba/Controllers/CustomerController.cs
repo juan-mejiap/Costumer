@@ -46,5 +46,18 @@ public class CustomerController : ControllerBase
         _customerRepository.Save(newCustomer);
         return CreatedAtAction(nameof(GetCustomerById), new { customerId = newCustomer.Id }, newCustomer);
     }
+
+    [HttpPost("{customerId}")]
+    public IActionResult DeleteCustomerById(int customerId)
+    {
+        var customer = _customerRepository.GetCustomerById(customerId);
+
+        if (customer == null)
+        {
+            return NotFound();
+        }
+        _customerRepository.DeleteCustomer(customer);
+        return Ok("customer eliminado");
+    }
 }
 
